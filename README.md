@@ -12,3 +12,4 @@
  - Don't forget to provide api key in env under the variable name "NEWS_API"
 
 2. Run php artisan migrate to create news table in DB
+3. php artisan serve to start local server
