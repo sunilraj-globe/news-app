@@ -1,73 +1,66 @@
-# News App
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-## Intro
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-This code activity is a way for you to show us your development skills -
-we’re just as interested in how you think through a problem and approach
-designing a solution as we are in the code that you write.
+## About Laravel
 
-Please give this page a read through before we come back together and
-chat through any questions you might have.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## Brief
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-The app we are building today is a proof of concept prototype towards a
-news search / research tool where a user could:
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-- Search against one or more news sites / services for terms they are
-  interested in
-- Get a collated list of results, click through to read further the
-  articles of interest.
-- Pin or bookmark articles to read later or follow up.
+## Learning Laravel
 
-We may or may not build all of this in the session and that's totally
-fine. Just keep this in mind as background, to maybe help guide
-decisions you might make.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-For today we'll focus on a single source, the Guardian’s content API -
-[https://open-platform.theguardian.com/](https://open-platform.theguardian.com/)
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-The app should present a text field for the user to type their search
-terms, *as the user types* it should take that input and use it to
-perform a search against
+## Laravel Sponsors
 
-Given the result of that API call it should display a list of results,
-grouped by the Section of the Guardian the items are found in.
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Specifics
+### Premium Partners
 
-- The application should be built in (React if you are doing the
-  frontend coding challenge, an MVC framework of your preference if you
-  are doing the backend coding challenge)
-    - The application should not call the Guardian API directly, rather
-      we'd like to see you build your own API as a proxy for the
-      Guardian one
-- Each item should show:
-    - The Title
-    - A link to the article
-    - The publication date (formatted as DD/MM/YYYY).
-    - A button or checkbox that allows it to be pinned.
-        - Pinned items should appear below the search results, and stay
-          on screen as search results change.
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[CMS Max](https://www.cmsmax.com/)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
+- **[Romega Software](https://romegasoftware.com)**
 
-Use whichever libraries and frameworks that will help you get the job
-done. Use any UI framework or prebuilt design system that works for you.
-We might have a conversation about the choices you make, so it’s great
-if you have a solid reason for them.
+## Contributing
 
-## What we’re looking for
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-- A working app pushed to your own Github account - please fork the repo
-  and start with one of the branches for your chosen technology stack.
-- A good idea of the decisions you have made while building this. Why
-  you did it *this way* and not *that way* and what that means. What are
-  you locking yourself into and what are you deferring to later. What is
-  going to matter for ongoing performance, scalability, extensibility,
-  robustness.
+## Code of Conduct
 
-## **What we’re not looking for, as much**
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-- **Visual design.** Beyond a basic idea of clarity, any visual design
-  touches are *entirely* optional. Some developers prefer to leave the
-  design to designers, some get a kick out of making things *just so*.
-  We like both kinds.
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
