@@ -1,0 +1,52 @@
+.top-navigation{
+	height:100%;
+	border-bottom: 1px solid #888888;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+	box-shadow: 5px 5px 5px #888888;
+}
+.search-bar{
+	font-size: 1.5rem;
+    height: 5rem;
+}
+.articles{
+	border-bottom: 1px solid black;
+}
+.article-link{
+	text-decoration: none;
+	color:black;
+}
+.article-link:hover{
+	color: #707c07;
+}
+.articles:hover{
+	background-color: #80808069;
+}
+
+@media only screen and (max-width: 600px) {
+	.article-container{
+		height: unset;
+	    overflow-x: auto;
+	}
+	body{
+		overflow: auto;
+	}
+}
+@media only screen and (min-width: 768px) {
+  	.article-container{
+		height: 100vw;
+		overflow-x: scroll;
+	}
+	body{
+		overflow: hidden;
+	}
+} 
+@media only screen and (min-width: 992px) {
+  	.article-container{
+		height: 60vw;
+		overflow-x: scroll;
+	}
+	body{
+		overflow: hidden;
+	}
+} 

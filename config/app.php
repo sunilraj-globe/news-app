@@ -38,7 +38,10 @@ return [
     | application. If disabled, a simple generic error page is shown.
     |
     */
+    'NEWS_API' => env('NEWS_API', '7f107898-68b9-4d18-94e7-6d82b7c77e4e'),
 
+
+    
     'debug' => (bool) env('APP_DEBUG', false),
 
     /*
