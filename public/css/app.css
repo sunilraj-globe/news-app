@@ -24,4 +24,11 @@
 }
 .text-right{
 	text-align: right;
+}.loader{
+	display: flex;
+    position: fixed;
+    top: 25vh;
+    left: 35vw;
+    min-height: 20vh;
+    background: transparent;
 }

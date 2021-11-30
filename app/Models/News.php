@@ -16,24 +16,19 @@ class News extends Model
 
 
     public static function GetNews(){
-    	$saved_news = News::where('deleted_at',NULL)->pluck('news_id');
-    	
-       	$news = Http::get('https://content.guardianapis.com/search?api-key='.env('NEWS_API').'&show-tags=keyword&show-section=true&page-size=20');
-       	
+       	$news = Http::get('https://content.guardianapis.com/search?api-key='.env('NEWS_API').'&show-tags=keyword&show-section=true&page-size=10');      	
        	if($news->successful()){
-       		$filtered_news = array();
-       		$saved_news_array = array();
-       		foreach($news['response']['results'] as $result){
-       			if($saved_news){
-       				if(!in_array($result['id'], $saved_news->toArray()) ) {
-       					array_push($filtered_news,$result);
-       				}else{
-       					array_push($saved_news_array,$result);
-       				}
-       			}	
-       		}
-       		//dd([$filtered_news,$saved_news_array]);
-       		return [collect($filtered_news)->sortBy('section')->toArray(),collect($saved_news_array)->sortBy('section')->toArray()];
+       		$final_news = News::FilterNews($news['response']['results']);
+       		return $final_news;
+       	}else{
+       		return null;
+       	}  
+    }
+    public static function GetNewsSpecific($req){
+       	$news = Http::get('https://content.guardianapis.com/search?q='.$req->search.'&api-key='.env('NEWS_API').'&show-tags=keyword&show-section=true&page-size=10');
+       	if($news->successful()){
+       		$final_news = News::FilterNews($news['response']['results']);
+       		return $final_news;
        	}else{
        		return null;
        	}  
@@ -48,4 +43,23 @@ class News extends Model
     	}
     	return 'success';
     }
+    public static function FilterNews($results){
+    	$saved_news = News::where('deleted_at',NULL)->pluck('news_id');
+    	$filtered_news = array();
+   		$saved_news_array = array();
+   		foreach($results as $result){
+   			if($saved_news){
+   				if(!in_array($result['id'], $saved_news->toArray()) ) {
+   					array_push($filtered_news,$result);
+   				}
+   			}	
+   		}
+   		foreach($saved_news as $saved){
+			$news = Http::get('https://content.guardianapis.com/'.$saved.'?api-key='.env('NEWS_API').'&show-tags=keyword&show-section=true&page-size=10');
+			if($news->successful()){
+				array_push($saved_news_array,$news['response']['content']);
+			}
+   		}
+   		return [collect($filtered_news)->sortBy('section')->toArray(),collect($saved_news_array)->sortBy('section')->toArray()];
+    } 
 }
