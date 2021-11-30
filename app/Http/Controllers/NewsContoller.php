@@ -13,4 +13,8 @@ class NewsContoller extends Controller
     	$news = News::GetNews();
         return view('news.index',compact('news'));
     }
+    public function store(Request $req){
+		$news = News::Store($req);
+        return redirect()->route('news.index');
+    }
 }

@@ -7,7 +7,7 @@
 }
 .search-bar{
 	font-size: 1.5rem;
-    height: 5rem;
+    height: 4rem;
 }
 .articles{
 	border-bottom: 1px solid black;
@@ -22,31 +22,6 @@
 .articles:hover{
 	background-color: #80808069;
 }
-
-@media only screen and (max-width: 600px) {
-	.article-container{
-		height: unset;
-	    overflow-x: auto;
-	}
-	body{
-		overflow: auto;
-	}
+.text-right{
+	text-align: right;
 }
-@media only screen and (min-width: 768px) {
-  	.article-container{
-		height: 100vw;
-		overflow-x: scroll;
-	}
-	body{
-		overflow: hidden;
-	}
-} 
-@media only screen and (min-width: 992px) {
-  	.article-container{
-		height: 60vw;
-		overflow-x: scroll;
-	}
-	body{
-		overflow: hidden;
-	}
-} 
